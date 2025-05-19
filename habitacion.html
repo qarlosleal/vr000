@@ -5,19 +5,26 @@
   <body>
     <a-scene>
 
-      <!-- Suelo -->
+      <!-- Suelo gris -->
       <a-plane position="0 0 0" rotation="-90 0 0" width="10" height="10" color="#888888"></a-plane>
 
-      <!-- Techo -->
+      <!-- Techo gris claro -->
       <a-plane position="0 3 0" rotation="90 0 0" width="10" height="10" color="#cccccc"></a-plane>
 
-      <!-- Paredes -->
-      <a-box position="0 1.5 -5" width="10" height="3" depth="0.1" color="white"></a-box> <!-- Pared trasera -->
-      <a-box position="0 1.5 5" width="10" height="3" depth="0.1" color="#e0e0e0"></a-box>  <!-- Pared delantera -->
-      <a-box position="-5 1.5 0" width="0.1" height="3" depth="10" color="#d0d0d0"></a-box> <!-- Lateral izquierdo -->
-      <a-box position="5 1.5 0" width="0.1" height="3" depth="10" color="#d0d0d0"></a-box>  <!-- Lateral derecho -->
+      <!-- Pared trasera (roja tomate con textura de ladrillo) -->
+      <a-box position="0 1.5 -5" width="10" height="3" depth="0.1" 
+             src="https://cdn.aframe.io/a-painter/images/floor.jpg"></a-box>
 
-      <!-- Mesa (una superficie y cuatro patas) -->
+      <!-- Pared delantera (verde medio) -->
+      <a-box position="0 1.5 5" width="10" height="3" depth="0.1" color="#3CB371"></a-box>
+
+      <!-- Pared izquierda (azul) -->
+      <a-box position="-5 1.5 0" width="0.1" height="3" depth="10" color="#1E90FF"></a-box>
+
+      <!-- Pared derecha (amarillo dorado) -->
+      <a-box position="5 1.5 0" width="0.1" height="3" depth="10" color="#FFD700"></a-box>
+
+      <!-- Mesa -->
       <a-box position="0 1 0" width="2" height="0.1" depth="1" color="#8B4513"></a-box> <!-- Tablero -->
 
       <!-- Patas -->
