@@ -4,15 +4,15 @@
   </head>
   <body>
     <a-scene>
-      <!-- Caja roja principal con animación -->
+      <!-- Caja roja principal animada -->
       <a-box position="-1 1.6 -5"
              animation="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true; dir: alternate"
              color="tomato">
 
-        <!-- Caja verde hija con animación relativa (se mueve arriba y abajo respecto a la roja) -->
-        <a-box position="0 1 0"
+        <!-- Caja verde hija que se aleja de la caja roja -->
+        <a-box position="0 0.5 0"
                color="green"
-               animation="property: position; to: 0 -1 0; dur: 1000; dir: alternate; loop: true; easing: easeInOutSine">
+               animation="property: position; to: 5 0.5 0; dur: 1000; easing: easeOutQuad; dir: alternate; loop: true">
         </a-box>
 
       </a-box>
