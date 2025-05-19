@@ -9,12 +9,14 @@
              animation="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true; dir: alternate"
              color="tomato">
 
-        <!-- Caja verde hija, se moverá junto con la roja -->
-        <a-box position="0 1 0" color="green"></a-box>
+        <!-- Caja verde hija con animación relativa (se mueve arriba y abajo respecto a la roja) -->
+        <a-box position="0 1 0"
+               color="green"
+               animation="property: position; to: 0 -1 0; dur: 1000; dir: alternate; loop: true; easing: easeInOutSine">
+        </a-box>
 
       </a-box>
 
-      <!-- Cielo opcional -->
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
   </body>
