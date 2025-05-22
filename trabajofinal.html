@@ -2,14 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Iglesia con ábside, tarima, mesa y cenefa</title>
+    <title>Iglesia con ábside y plataforma elevada</title>
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
 
-      <!-- Cámara al inicio, mirando al interior -->
-      <a-entity position="0 1.6 -15" rotation="0 180 0">
+      <!-- Cámara al inicio de la iglesia -->
+      <a-entity position="0 1.6 -15" rotation="0 -180 0">
         <a-camera wasd-controls look-controls>
           <a-cursor></a-cursor>
         </a-camera>
@@ -27,13 +27,13 @@
       <!-- Pared lateral derecha -->
       <a-box position="5 5 -5" width="0.2" height="10" depth="30" color="#bbbbbb"></a-box>
 
-      <!-- Ábside semicilíndrico cerrado -->
+      <!-- Ábside semicilíndrico en su sitio original -->
       <a-cylinder 
         position="0 5 10"  
         radius="5" 
         height="10" 
         theta-length="180" 
-        rotation="90 180 0" 
+        rotation="0 270 0" 
         color="#888888">
       </a-cylinder>
 
@@ -41,29 +41,10 @@
       <a-box position="0 0.3 10" width="10" height="0.6" depth="5" color="#b0b0b0"></a-box>
 
       <!-- Escalón inferior -->
-      <a-box position="0 0.1 6.5" width="4" height="0.2" depth="1" color="#999999"></a-box>
+      <a-box position="0 0.1 6.5" width="10" height="0.2" depth="1" color="#999999"></a-box>
 
       <!-- Escalón superior -->
-      <a-box position="0 0.3 7.0" width="4" height="0.2" depth="1" color="#aaaaaa"></a-box>
-
-      <!-- Mesa presidencia -->
-      <a-box position="0 0.8 11.5" width="2" height="0.8" depth="1" color="#8B4513"></a-box>
-
-      <!-- Cenefa cobre lateral izquierda -->
-      <a-box position="-4.9 2 -5" width="0.05" height="0.2" depth="30" color="#b87333"></a-box>
-
-      <!-- Cenefa cobre lateral derecha -->
-      <a-box position="4.9 2 -5" width="0.05" height="0.2" depth="30" color="#b87333"></a-box>
-
-      <!-- Cenefa cobre curva del ábside -->
-      <a-torus 
-        arc="180" 
-        radius="5" 
-        radius-tubular="0.05" 
-        position="0 2 10" 
-        rotation="0 180 90" 
-        color="#b87333">
-      </a-torus>
+      <a-box position="0 0.3 7.0" width="10" height="0.2" depth="1" color="#aaaaaa"></a-box>
 
     </a-scene>
   </body>
