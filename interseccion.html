@@ -20,18 +20,13 @@
                color="#A5D6A7">
       </a-plane>
 
-      <!-- === FILA 1 === -->
+      <!-- === FILA 1 (SÓLIDA) - z = 0 === -->
       <a-cylinder height="10" radius="7.5" segments-radial="6" position="-45 5 0"
                   material="color: #C5E1A5; roughness: 1; flatShading: true"></a-cylinder>
-      <a-cylinder height="10" radius="7.5" segments-radial="6" position="-45 5 0"
-                  material="color: black; wireframe: true"></a-cylinder>
 
       <a-entity geometry="primitive: cone; radiusBottom: 7.5; radiusTop: 0; height: 10; segmentsRadial: 6"
-                material="color: #FFF9C4; roughness: 1; flatShading: true"
-                position="-15 5 0"></a-entity>
-      <a-entity geometry="primitive: cone; radiusBottom: 7.5; radiusTop: 0; height: 10; segmentsRadial: 6"
-                material="color: black; wireframe: true"
-                position="-15 5 0"></a-entity>
+                position="-15 5 0"
+                material="color: #FFF9C4; roughness: 1; flatShading: true"></a-entity>
 
       <a-cone height="10" radius-bottom="7.5" radius-top="0" segments-radial="32"
               position="15 5 0"
@@ -40,25 +35,20 @@
       <a-cylinder height="10" radius="7.5" segments-radial="32" position="45 5 0"
                   material="color: #90CAF9; roughness: 1;"></a-cylinder>
 
-      <!-- fila 2 -->
+      <!-- === FILA 2 (WIRE) - z = -30 === -->
       <a-cylinder height="10" radius="7.5" segments-radial="6" position="-45 5 -30"
-                  material="color: #C5E1A5; roughness: 1; flatShading: true"></a-cylinder>
-      <a-cylinder height="10" radius="7.5" segments-radial="6" position="-45 5 -30"
-                  material="color: black; wireframe: true"></a-cylinder>
+                  material="color: black; wireframe: true;"></a-cylinder>
 
       <a-entity geometry="primitive: cone; radiusBottom: 7.5; radiusTop: 0; height: 10; segmentsRadial: 6"
-                material="color: #FFF9C4; roughness: 1; flatShading: true"
-                position="-15 5 -30"></a-entity>
-      <a-entity geometry="primitive: cone; radiusBottom: 7.5; radiusTop: 0; height: 10; segmentsRadial: 6"
-                material="color: black; wireframe: true"
-                position="-15 5 -30"></a-entity>
+                position="-15 5 -30"
+                material="color: black; wireframe: true;"></a-entity>
 
       <a-cone height="10" radius-bottom="7.5" radius-top="0" segments-radial="32"
               position="15 5 -30"
-              material="color: #FFCC80; roughness: 1;"></a-cone>
+              material="color: black; wireframe: true;"></a-cone>
 
       <a-cylinder height="10" radius="7.5" segments-radial="32" position="45 5 -30"
-                  material="color: #90CAF9; roughness: 1;"></a-cylinder>
+                  material="color: black; wireframe: true;"></a-cylinder>
 
       <!-- === ESFERAS ANIMADAS === -->
       <a-sphere id="esfera1"
@@ -75,22 +65,13 @@
                 animation__mover="property: position; to: 70 8 -30; dur: 15000; dir: alternate; loop: true; easing: linear">
       </a-sphere>
 
-      <!-- Script: toggle de movimiento -->
+      <!-- Script: toggle movimiento -->
       <script>
         let animando = true;
-
         document.querySelector('a-scene').addEventListener('click', () => {
           const esfera1 = document.getElementById('esfera1').components['animation__mover'];
           const esfera2 = document.getElementById('esfera2').components['animation__mover'];
-
-          if (animando) {
-            esfera1.pause();
-            esfera2.pause();
-          } else {
-            esfera1.play();
-            esfera2.play();
-          }
-
+          animando ? (esfera1.pause(), esfera2.pause()) : (esfera1.play(), esfera2.play());
           animando = !animando;
         });
       </script>
