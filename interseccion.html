@@ -5,25 +5,25 @@
   <body>
     <a-scene>
       <!-- Cámara -->
-      <a-entity camera look-controls position="0 10 30"></a-entity>
+      <a-entity camera look-controls position="0 20 50"></a-entity>
 
-      <!-- Pirámide color crema -->
-      <a-entity geometry="primitive: cone; radiusBottom: 1.5; radiusTop: 0; height: 2; segmentsRadial: 6"
+      <!-- Pirámide grande y proporcionada -->
+      <a-entity geometry="primitive: cone; radiusBottom: 7.5; radiusTop: 0; height: 10; segmentsRadial: 6"
                 material="color: #FFF9C4; roughness: 1; metalness: 0"
-                position="0 1 0">
+                position="0 5 0">
       </a-entity>
 
       <!-- Esfera roja mate -->
       <a-sphere radius="8"
-                position="15 8 0"
+                position="20 8 0"
                 material="color: #D32F2F; roughness: 1; metalness: 0">
       </a-sphere>
 
       <!-- Suelo verde suave -->
       <a-plane rotation="-90 0 0"
                position="0 0 0"
-               width="50"
-               height="50"
+               width="80"
+               height="80"
                color="#A5D6A7">
       </a-plane>
     </a-scene>
