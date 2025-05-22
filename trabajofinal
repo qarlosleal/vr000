@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Auditorio en VR</title>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene shadow="type: pcfsoft">
+      
+      <!-- Cámara -->
+      <a-entity position="0 1.6 10">
+        <a-camera wasd-controls look-controls>
+          <a-cursor></a-cursor>
+        </a-camera>
+      </a-entity>
+
+      <!-- Suelo completo -->
+      <a-plane rotation="-90 0 0" width="40" height="60" color="#ccc" shadow></a-plane>
+
+      <!-- Zona 1: semicircular (hecha con entidad torus parcial) -->
+      <a-torus 
+        arc="180" 
+        radius="8" 
+        radius-tubular="4" 
+        rotation="90 0 0"
+        position="0 0.1 -5" 
+        color="#6C91BF">
+      </a-torus>
+
+      <!-- Zona 2: rectángulo intermedio -->
+      <a-box position="0 0.1 -20" width="16" height="0.2" depth="12" color="#7BC8A4"></a-box>
+
+      <!-- Zona 3: rectángulo final -->
+      <a-box position="0 0.1 -35" width="16" height="0.2" depth="12" color="#7BC8A4"></a-box>
+
+      <!-- Arco de medio punto (usando torus recortado) -->
+      <a-torus 
+        arc="180" 
+        radius="4" 
+        radius-tubular="0.3" 
+        rotation="0 0 0" 
+        position="0 4 -14" 
+        color="#AA8888">
+      </a-torus>
+
+      <!-- Paredes laterales -->
+      <a-box position="-8 2 -20" width="0.5" height="5" depth="40" color="#999"></a-box>
+      <a-box position="8 2 -20" width="0.5" height="5" depth="40" color="#999"></a-box>
+
+      <!-- Pared trasera -->
+      <a-box position="0 2 -50" width="16" height="5" depth="0.5" color="#999"></a-box>
+
+      <!-- Techo -->
+      <a-box position="0 5.25 -20" width="16" height="0.5" depth="40" color="#aaa"></a-box>
+
+    </a-scene>
+  </body>
+</html>
