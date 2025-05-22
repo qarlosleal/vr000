@@ -2,57 +2,66 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Auditorio desde el fondo</title>
+    <title>Explosión del Auditorio</title>
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
 
-      <!-- Cámara al fondo, mirando al ábside -->
-      <a-entity position="0 1.6 -30" rotation="0 0 0">
+      <!-- Cámara desde el fondo -->
+      <a-entity position="0 1.6 -30">
         <a-camera wasd-controls look-controls>
           <a-cursor></a-cursor>
         </a-camera>
       </a-entity>
 
-      <!-- Suelo -->
-      <a-box position="0 0 -15" width="20" height="0.1" depth="40" color="#e0e0e0"></a-box>
-
-      <!-- Ábside gris -->
+      <!-- Ábside -->
       <a-cylinder 
+        id="abside"
         position="0 5 15" 
         radius="5" 
         height="10" 
         theta-length="180" 
         rotation="0 180 0" 
-        color="#888888">
+        color="#888888"
+        animation__explode="property: position; to: 0 15 25; dur: 1500; delay: 500; easing: easeOutQuad">
       </a-cylinder>
 
-      <!-- Arco de medio punto -->
+      <!-- Arco -->
       <a-torus 
+        id="arco"
         arc="180" 
         radius="5" 
         radius-tubular="0.2" 
         position="0 5 10" 
         rotation="0 0 90" 
-        color="#ffafcc">
+        color="#ffafcc"
+        animation__explode="property: position; to: 0 12 0; dur: 1500; delay: 500; easing: easeOutQuad">
       </a-torus>
 
-      <!-- Zona 2 -->
-      <a-box position="0 0.05 0" width="10" height="0.1" depth="10" color="#caffbf"></a-box>
+      <!-- Zonas 2 y 3 -->
+      <a-box id="zona2" position="0 0.05 0" width="10" height="0.1" depth="10" color="#caffbf"
+             animation__explode="property: position; to: -20 5 0; dur: 1500; delay: 500; easing: easeOutQuad"></a-box>
+      <a-box id="zona3" position="0 0.05 -10" width="10" height="0.1" depth="10" color="#fdffb6"
+             animation__explode="property: position; to: 20 5 -10; dur: 1500; delay: 500; easing: easeOutQuad"></a-box>
 
-      <!-- Zona 3 -->
-      <a-box position="0 0.05 -10" width="10" height="0.1" depth="10" color="#fdffb6"></a-box>
-
-      <!-- Paredes laterales -->
-      <a-box position="-5 5 -5" width="0.2" height="10" depth="40" color="#cccccc"></a-box>
-      <a-box position="5 5 -5" width="0.2" height="10" depth="40" color="#cccccc"></a-box>
+      <!-- Paredes -->
+      <a-box id="paredL" position="-5 5 -5" width="0.2" height="10" depth="40" color="#cccccc"
+             animation__explode="property: position; to: -15 10 -5; dur: 1500; delay: 500; easing: easeOutQuad"></a-box>
+      <a-box id="paredR" position="5 5 -5" width="0.2" height="10" depth="40" color="#cccccc"
+             animation__explode="property: position; to: 15 10 -5; dur: 1500; delay: 500; easing: easeOutQuad"></a-box>
 
       <!-- Pared posterior -->
-      <a-box position="0 5 -20" width="10" height="10" depth="0.2" color="#cccccc"></a-box>
+      <a-box id="paredBack" position="0 5 -20" width="10" height="10" depth="0.2" color="#cccccc"
+             animation__explode="property: position; to: 0 15 -40; dur: 1500; delay: 500; easing: easeOutQuad"></a-box>
 
       <!-- Techo -->
-      <a-box position="0 10.05 -5" width="10" height="0.1" depth="40" color="#bbbbbb"></a-box>
+      <a-box id="techo" position="0 10.05 -5" width="10" height="0.1" depth="40" color="#bbbbbb"
+             animation__explode="property: position; to: 0 25 -5; dur: 1500; delay: 500; easing: easeOutQuad"></a-box>
+
+      <!-- Suelo -->
+      <a-box id="suelo" position="0 0 -15" width="20" height="0.1" depth="40" color="#e0e0e0"
+             animation__explode="property: position; to: 0 -10 -15; dur: 1500; delay: 500; easing: easeOutQuad"></a-box>
 
     </a-scene>
   </body>
