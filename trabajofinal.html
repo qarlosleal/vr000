@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Auditorio en A-Frame</title>
+    <title>Auditorio con ábside en A-Frame</title>
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
   </head>
   <body>
@@ -15,44 +15,45 @@
         </a-camera>
       </a-entity>
 
-      <!-- Suelo -->
+      <!-- Suelo general -->
       <a-box position="0 0 -15" width="20" height="0.1" depth="40" color="#e0e0e0"></a-box>
 
-      <!-- Zona 1: semicircular -->
-      <a-ring 
-        position="0 0.05 0" 
-        rotation="-90 0 0"
-        radius-inner="0" 
-        radius-outer="10" 
-        theta-length="180"
-        color="#a0c4ff">
-      </a-ring>
+      <!-- Ábside: medio cilindro vertical (zona 1) -->
+      <a-cylinder 
+        position="0 2 5" 
+        radius="5" 
+        height="4" 
+        theta-length="180" 
+        rotation="0 0 0" 
+        color="#a0c4ff" 
+        open-ended="false">
+      </a-cylinder>
 
-      <!-- Arco de medio punto desde suelo a techo -->
+      <!-- Arco de medio punto de suelo a techo -->
       <a-torus 
         arc="180" 
         radius="2" 
         radius-tubular="0.2" 
-        position="0 2 -5" 
+        position="0 2 0" 
         rotation="0 0 90" 
         color="#ffafcc">
       </a-torus>
 
       <!-- Zona 2: intermedia rectangular -->
-      <a-box position="0 0.05 -15" width="10" height="0.1" depth="10" color="#caffbf"></a-box>
+      <a-box position="0 0.05 -10" width="10" height="0.1" depth="10" color="#caffbf"></a-box>
 
       <!-- Zona 3: rectangular final -->
-      <a-box position="0 0.05 -25" width="10" height="0.1" depth="10" color="#fdffb6"></a-box>
+      <a-box position="0 0.05 -20" width="10" height="0.1" depth="10" color="#fdffb6"></a-box>
 
       <!-- Paredes laterales -->
-      <a-box position="-5 2 -20" width="0.2" height="4" depth="30" color="#cccccc"></a-box>
-      <a-box position="5 2 -20" width="0.2" height="4" depth="30" color="#cccccc"></a-box>
+      <a-box position="-5 2 -10" width="0.2" height="4" depth="30" color="#cccccc"></a-box>
+      <a-box position="5 2 -10" width="0.2" height="4" depth="30" color="#cccccc"></a-box>
 
       <!-- Pared posterior -->
-      <a-box position="0 2 -30" width="10" height="4" depth="0.2" color="#cccccc"></a-box>
+      <a-box position="0 2 -25" width="10" height="4" depth="0.2" color="#cccccc"></a-box>
 
       <!-- Techo -->
-      <a-box position="0 4.05 -20" width="10" height="0.1" depth="30" color="#bbbbbb"></a-box>
+      <a-box position="0 4.05 -10" width="10" height="0.1" depth="30" color="#bbbbbb"></a-box>
 
     </a-scene>
   </body>
