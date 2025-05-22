@@ -7,26 +7,36 @@
       <!-- Cámara -->
       <a-entity camera look-controls position="0 20 50"></a-entity>
 
-      <!-- Pirámide (altura 10, base proporcional) -->
+      <!-- Pirámide -->
       <a-entity geometry="primitive: cone; radiusBottom: 7.5; radiusTop: 0; height: 10; segmentsRadial: 6"
                 material="color: #FFF9C4; roughness: 1; metalness: 0"
                 position="0 5 0">
       </a-entity>
 
-      <!-- Esfera animada (se mueve a través de la pirámide) -->
-      <a-sphere radius="8"
+      <!-- Esfera animada con ID -->
+      <a-sphere id="esfera"
+                radius="8"
                 position="20 8 0"
                 material="color: #D32F2F; roughness: 1; metalness: 0"
-                animation="property: position; to: -20 8 0; dur: 10000; dir: alternate; loop: true; easing: linear">
+                animation__mover="property: position; to: -20 8 0; dur: 10000; dir: alternate; loop: true; easing: linear">
       </a-sphere>
 
-      <!-- Suelo verde suave -->
+      <!-- Suelo -->
       <a-plane rotation="-90 0 0"
                position="0 0 0"
                width="80"
                height="80"
                color="#A5D6A7">
       </a-plane>
+
+      <!-- Script para detener la animación con clic -->
+      <script>
+        document.querySelector('a-scene').addEventListener('click', () => {
+          const esfera = document.getElementById('esfera');
+          esfera.components['animation__mover'].pause();
+        });
+      </script>
     </a-scene>
   </body>
 </html>
+
