@@ -1,44 +1,38 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
-    <script src="https://unpkg.com/aframe-super-hands-component@4.0.5/dist/aframe-super-hands.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aframe-physics-system@4.0.1/dist/aframe-physics-system.min.js"></script>
   </head>
   <body>
-    <a-scene physics="gravity: 0 -0.1 0">
-      <!-- Cámara con cursor -->
-      <a-entity camera look-controls position="0 20 50">
-        <a-entity cursor="rayOrigin: mouse" raycaster="objects: .interactuable"></a-entity>
-      </a-entity>
+    <a-scene>
+      <!-- Cámara -->
+      <a-entity camera look-controls position="0 20 50"></a-entity>
 
-      <!-- Pirámide interactuable -->
+      <!-- Pirámide (altura 10, base proporcional) -->
       <a-entity geometry="primitive: cone; radiusBottom: 7.5; radiusTop: 0; height: 10; segmentsRadial: 6"
                 material="color: #FFF9C4; roughness: 1; metalness: 0"
-                position="0 5 0"
-                class="interactuable"
-                grabbable dynamic-body>
+                position="0 5 0">
       </a-entity>
 
-      <!-- Esfera interactuable -->
+      <!-- Esfera animada (se mueve hacia la pirámide y la atraviesa) -->
       <a-sphere radius="8"
                 position="20 8 0"
-                material="color: #D32F2F; roughness: 1; metalness: 0"
-                class="interactuable"
-                grabbable dynamic-body>
+                material="color: #D32F2F; roughness: 1; metalness: 0">
+        <a-animation attribute="position"
+                     to="-20 8 0"
+                     dur="10000"
+                     repeat="indefinite"
+                     direction="alternate"
+                     easing="linear">
+        </a-animation>
       </a-sphere>
 
-      <!-- Suelo -->
+      <!-- Suelo verde suave -->
       <a-plane rotation="-90 0 0"
                position="0 0 0"
                width="80"
                height="80"
-               color="#A5D6A7"
-               static-body>
+               color="#A5D6A7">
       </a-plane>
-
-      <!-- Controlador de manos para permitir arrastre -->
-      <a-entity super-hands></a-entity>
     </a-scene>
   </body>
 </html>
