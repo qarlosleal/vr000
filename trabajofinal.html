@@ -8,17 +8,17 @@
   <body>
     <a-scene>
 
-      <!-- Cámara de usuario -->
+      <!-- Cámara -->
       <a-entity position="0 1.6 15">
         <a-camera wasd-controls look-controls>
           <a-cursor></a-cursor>
         </a-camera>
       </a-entity>
 
-      <!-- SUELO GENERAL -->
+      <!-- Suelo -->
       <a-box position="0 0 -15" width="20" height="0.1" depth="40" color="#e0e0e0"></a-box>
 
-      <!-- ZONA 1: SEMICIRCULAR (media esfera cortada) -->
+      <!-- Zona 1: semicircular -->
       <a-ring 
         position="0 0.05 0" 
         rotation="-90 0 0"
@@ -28,34 +28,31 @@
         color="#a0c4ff">
       </a-ring>
 
-      <!-- ARCO de medio punto (usamos un torus) -->
+      <!-- Arco de medio punto desde suelo a techo -->
       <a-torus 
         arc="180" 
-        radius="3" 
+        radius="2" 
         radius-tubular="0.2" 
-        position="0 3 -5" 
-        rotation="0 0 0" 
+        position="0 2 -5" 
+        rotation="0 0 90" 
         color="#ffafcc">
       </a-torus>
 
-      <!-- PARED divisoria bajo el arco -->
-      <a-box position="0 1.5 -5" width="0.2" height="3" depth="10" color="#bdbdbd"></a-box>
-
-      <!-- ZONA 2: RECTANGULAR INTERMEDIA -->
+      <!-- Zona 2: intermedia rectangular -->
       <a-box position="0 0.05 -15" width="10" height="0.1" depth="10" color="#caffbf"></a-box>
 
-      <!-- ZONA 3: RECTANGULAR FINAL -->
+      <!-- Zona 3: rectangular final -->
       <a-box position="0 0.05 -25" width="10" height="0.1" depth="10" color="#fdffb6"></a-box>
 
-      <!-- PAREDES LATERALES -->
-      <a-box position="-5 2 -15" width="0.2" height="4" depth="40" color="#cccccc"></a-box>
-      <a-box position="5 2 -15" width="0.2" height="4" depth="40" color="#cccccc"></a-box>
+      <!-- Paredes laterales -->
+      <a-box position="-5 2 -20" width="0.2" height="4" depth="30" color="#cccccc"></a-box>
+      <a-box position="5 2 -20" width="0.2" height="4" depth="30" color="#cccccc"></a-box>
 
-      <!-- PARED POSTERIOR -->
-      <a-box position="0 2 -35" width="10" height="4" depth="0.2" color="#cccccc"></a-box>
+      <!-- Pared posterior -->
+      <a-box position="0 2 -30" width="10" height="4" depth="0.2" color="#cccccc"></a-box>
 
-      <!-- TECHO -->
-      <a-box position="0 4.05 -15" width="10" height="0.1" depth="40" color="#bbbbbb"></a-box>
+      <!-- Techo -->
+      <a-box position="0 4.05 -20" width="10" height="0.1" depth="30" color="#bbbbbb"></a-box>
 
     </a-scene>
   </body>
