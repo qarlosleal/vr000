@@ -13,17 +13,11 @@
                 position="0 5 0">
       </a-entity>
 
-      <!-- Esfera animada (se mueve hacia la pirámide y la atraviesa) -->
+      <!-- Esfera animada (se mueve a través de la pirámide) -->
       <a-sphere radius="8"
                 position="20 8 0"
-                material="color: #D32F2F; roughness: 1; metalness: 0">
-        <a-animation attribute="position"
-                     to="-20 8 0"
-                     dur="10000"
-                     repeat="indefinite"
-                     direction="alternate"
-                     easing="linear">
-        </a-animation>
+                material="color: #D32F2F; roughness: 1; metalness: 0"
+                animation="property: position; to: -20 8 0; dur: 10000; dir: alternate; loop: true; easing: linear">
       </a-sphere>
 
       <!-- Suelo verde suave -->
