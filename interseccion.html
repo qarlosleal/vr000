@@ -5,7 +5,9 @@
   <body>
     <a-scene>
       <!-- Cámara -->
-      <a-entity camera look-controls position="0 20 60"></a-entity>
+      <a-camera wasd-controls look-controls>
+          <a-cursor></a-cursor>
+      </a-camera>
 
       <!-- Suelo -->
       <a-plane rotation="-90 0 0"
