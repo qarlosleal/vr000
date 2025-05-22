@@ -2,20 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Iglesia con ábside</title>
+    <title>Iglesia con ábside cerrado correctamente</title>
     <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
 
-      <!-- Cámara al principio de la iglesia -->
+      <!-- Cámara al inicio de la iglesia -->
       <a-entity position="0 1.6 -15" rotation="0 0 0">
         <a-camera wasd-controls look-controls>
           <a-cursor></a-cursor>
         </a-camera>
       </a-entity>
 
-      <!-- Suelo de la iglesia -->
+      <!-- Suelo -->
       <a-box position="0 0 -5" width="10" height="0.1" depth="30" color="#dedede"></a-box>
 
       <!-- Techo -->
@@ -27,20 +27,16 @@
       <!-- Pared lateral derecha -->
       <a-box position="5 5 -5" width="0.2" height="10" depth="30" color="#bbbbbb"></a-box>
 
-      <!-- Pared trasera de la nave (antes del ábside) -->
-      <!-- No se pone porque el ábside lo sustituye -->
-
-      <!-- Ábside como medio cilindro -->
+      <!-- Ábside semicilíndrico cerrado al final de la nave -->
       <a-cylinder 
-        position="0 5 10" 
+        position="0 5 15" 
         radius="5" 
         height="10" 
         theta-length="180" 
-        rotation="0 180 0" 
+        rotation="90 180 0" 
         color="#888888">
       </a-cylinder>
 
     </a-scene>
   </body>
 </html>
-
