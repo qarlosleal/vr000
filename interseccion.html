@@ -4,7 +4,7 @@
   </head>
   <body>
     <a-scene>
-      <!-- Cámara -->
+      <!-- cámara -->
       <a-entity id="camara"
                 camera
                 position="0 20 80"
@@ -12,7 +12,7 @@
                 wasd-controls>
       </a-entity>
 
-      <!-- Suelo -->
+      <!-- suelo -->
       <a-plane rotation="-90 0 0"
                position="0 0 0"
                width="150"
@@ -20,7 +20,7 @@
                color="#A5D6A7">
       </a-plane>
 
-      <!-- === FILA 1 (SÓLIDA) - z = 0 === -->
+      <!-- sólido en z=0 -->
       <a-cylinder height="10" radius="7.5" segments-radial="6" position="-45 5 0"
                   material="color: #C5E1A5; roughness: 1; flatShading: true"></a-cylinder>
 
@@ -35,7 +35,7 @@
       <a-cylinder height="10" radius="7.5" segments-radial="32" position="45 5 0"
                   material="color: #90CAF9; roughness: 1;"></a-cylinder>
 
-      <!-- === FILA 2 (WIRE) - z = -30 === -->
+      <!-- wireframe en z=-30 -->
       <a-cylinder height="10" radius="7.5" segments-radial="6" position="-45 5 -30"
                   material="color: black; wireframe: true;"></a-cylinder>
 
@@ -50,7 +50,7 @@
       <a-cylinder height="10" radius="7.5" segments-radial="32" position="45 5 -30"
                   material="color: black; wireframe: true;"></a-cylinder>
 
-      <!-- === ESFERAS ANIMADAS === -->
+      <!-- esferas con alternate -->
       <a-sphere id="esfera1"
                 radius="8"
                 position="-70 8 0"
@@ -65,7 +65,7 @@
                 animation__mover="property: position; to: 70 8 -30; dur: 15000; dir: alternate; loop: true; easing: linear">
       </a-sphere>
 
-      <!-- Script: toggle movimiento -->
+      <!-- script para parar y volver a mover las esferas (chatGPT)-->
       <script>
         let animando = true;
         document.querySelector('a-scene').addEventListener('click', () => {
